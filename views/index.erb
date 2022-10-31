@@ -1,0 +1,11 @@
+
+<% @recipes.each_with_index do |recipe, index| %>
+  <li>
+    <% x = recipe.status ? "[X]" : "[ ]" %>
+    <%= "#{index+1}. #{x} #{recipe.name}, Rating: #{recipe.rating}, Prepare time: #{recipe.prep_time}" %>
+    <a href="/del/<%=index%>"> Delete <a>
+    <a href="/mark/<%=index%>"> Mark<a>
+  </li>
+<% end %>
+<a href="/new"> New <a>
+<a href="/import"> Import <a>
